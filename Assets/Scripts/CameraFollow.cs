@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
-{
-    public Transform player;
-    // Start is called before the first frame update
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
-    }
+public class CameraFollow : MonoBehaviour {
+	private Transform player;
+
+	void Start() {
+		player = transform.parent;
+	}
+
+	void Update() {
+		transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+	}
 }
